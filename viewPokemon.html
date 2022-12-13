@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <title>View your pokemon!</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="icon" type="image/png" href="./images/pikachu.png">
+
+    <!-- Internal CSS styling -->
+    <style>
+        #three-pokemon {
+            background-color: #FFCB05;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-pokemon {
+            color: rgb(216, 68, 93);
+            font-family: fantasy;
+        }
+
+        .name-pokemon a {
+            text-decoration: none;
+        }
+
+        img:hover {
+            box-shadow: 10px 10px 5px gray;
+            cursor: cell;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div class="title">
+            <h1 style="color: white;">Pokemon Generator</h1>
+        </div>
+        <div class="nav-buttons">
+            <a href="createPokemon.html">Create New Pokemon</a>
+            <a href="viewPokemon.html">View All Pokemon</a>
+        </div>
+    </div>
+
+    <h2 align="center">Here are your pokemon!</h1>
+        <div id="three-pokemon">
+            <div style="padding: 16px;">
+                <h2 class="name-pokemon"><a href="https://pokemon.fandom.com/wiki/Squirtle">
+                        Squirtle</a></h2>
+                <img width="500" src="https://c.tenor.com/GvSAFDzGxa4AAAAd/squirtle-squirtle-squad.gif" />
+                <p>Turtle pokemon with light blue skin and long, curled tail!</p>
+            </div>
+
+            <div style="padding: 16px;">
+                <h2 class="name-pokemon"><a href="https://pokemon.fandom.com/wiki/Chimchar">
+                        Chimchar</a></h2>
+                <img src="https://c.tenor.com/E7MBCw5gHlAAAAAM/chimchar-pokemon.gif" width="500"></img>
+                <p>Pokemon that resembles a chimpanzee and has orange fur!</p>
+            </div>
+
+            <div style="padding: 16px;">
+                <h2 class="name-pokemon"><a href="https://pokemon.fandom.com/wiki/Bulbasaur">
+                        Bulbasaur</a></h2>
+                <img width="500" src="https://c.tenor.com/38wTyIwrukEAAAAM/bulbasaur.gif" />
+                <p>Amphibian pokemon with blue-green skin and has large seed affixed to its back!</p>
+            </div>
+        </div>
+
+        <!-- Internal JavaScript functionality -->
+        <script>
+            const pokemonNames = document.getElementsByClassName("name-pokemon"); // array of elements
+            for (let i = 0; i < pokemonNames.length; i++) {
+                let pikachu = document.createElement("img");
+                pokemonNames[i].addEventListener("mouseover", () => {
+                    pikachu.src = "./images/pikachu.png";
+                    pikachu.width = 20;
+                    pikachu.style.paddingLeft = "10px";
+                    pokemonNames[i].appendChild(pikachu);
+                });
+                pokemonNames[i].addEventListener("mouseout", () => {
+                    pokemonNames[i].removeChild(pikachu);
+                });
+            }
+        </script>
+</body>
+
+</html>

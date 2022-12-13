@@ -1,0 +1,67 @@
+/* main.css */
+
+#navbar {
+    /*
+    - Change background color to #BF4141
+    - Add a 15px-thick border on the bottom
+    - Turn the navbar into a flex container w/ space between items
+    - Align the items vertically across the center
+    - Add a bottom margin of 25px
+    - Create space between each div using justify-content
+    */
+    background-color: #BF4141;
+    border-bottom: 15px solid black;
+    display: flex; /* This needs to be added in order to use flexbox properties*/
+    align-items: center;
+    margin-bottom: 25px;
+    justify-content: space-between;
+}
+
+/* 
+- The combinator > targets the "title" class's child h1 
+- Note: Internal/inline CSS styling makes title white
+*/
+.title > h1 {
+    margin-left: 16px; /* Adds a left margin of 16px */
+}
+
+.nav-buttons a {
+    /*
+    - Change font color to white
+    - Increase the font size to 18px
+    - Add a right margin of 16px
+    - Get rid of the line underline with text-decoration
+    */
+    color: white;
+    font-size: 18px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+#create-page {
+    /*
+    - Make it a flex container where lines are spaced evenly and aligned to the center
+    */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#pokemon-form {
+    /*
+    - Note: Used internal and inline styling in createPokemon.html
+    - Add a 1px black border around the form
+    - Add 20px of padding inside the form
+    - Make the form only 35% wide
+    */
+    padding: 20px;
+    width: 35%;
+}
+
+.form-row {
+    margin-bottom: 16px;
+}
