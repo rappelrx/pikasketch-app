@@ -6,3 +6,8 @@ npx create-react-app client
 cd client
 npm start
 ```
+
+### Remember to change:
+- `class` to `className`
+- `for` to `htmlFor`
+- `value` to `defaultValue`
