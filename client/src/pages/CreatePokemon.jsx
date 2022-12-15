@@ -4,7 +4,7 @@ import Type from '../components/Type';
 import './style.css';
 
 /**
- * This is a functional component htmlFor the Create a Pokemon page.
+ * This is a functional component for the Create a Pokemon page.
  */
 const CreatePokemon = () => {
     return (
