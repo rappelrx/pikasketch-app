@@ -2,7 +2,15 @@ const express = require('express');
 
 const router = express.Router(); // define a router
 
-/* router that creates an api route */
+/**
+ * Express.js API Routes:
+ * - router.get(PATH on the server, HANDLER function)
+ * - router.post(PATH, HANDLER)
+ * - router.put(PATH, HANDLER)
+ * - router.delete(PATH, HANDLER)
+ */
+
+// GET method route
 router.get('/pokemon', (req, res) => {
     // define our own pokemon in a JSON array
     const pokemon = [
@@ -36,6 +44,18 @@ router.get('/pokemon', (req, res) => {
         }
     ]
     res.status(200).json({ pokemon }); // 'pokemon' is both key and value
+});
+
+// POST method route
+router.post('/pokemon', (req, res) => {
+    const { pokemon } = req.body;
+    const { name, description, type1, image, moves } = pokemon;
+    if ((!name || !description || !type1 || !image || !moves) || moves.length > 4) {
+        res.status(400).json({ error: 'Invalid input' });
+    } else {
+        const punchMoves = moves.filter((move) => move.name.includes('Punch'));
+        res.status(200).json({ punchMoves });
+    }
 });
 
 module.exports = router; // to be imported in /server/index.js
