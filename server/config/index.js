@@ -5,6 +5,7 @@ dotenv.config();
 
 const config = {
     PORT: process.env.PORT,
+    databaseUrl: process.env.DATABASE_URL,
 }
 
 module.exports = config; // to be imported in /server/index.js

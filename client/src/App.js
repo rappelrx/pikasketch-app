@@ -1,18 +1,36 @@
+import React from 'react';
 import './App.css';
 import CreatePokemon from './pages/CreatePokemon';
 import ViewPokemon from './pages/ViewPokemon';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-/* Useful Resource: https://v5.reactrouter.com/web/api/ */
+import Layout from './pages/Layout';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+/* (Outdated) Useful Resource: https://v5.reactrouter.com/web/api/ */
 
-const App = () => {
+/*const App = () => {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Redirect from="/" to="/create" exact></Redirect>
+        <Routes>
+          <Navigate from="/" to="/create" exact></Navigate>
           <Route path="/create" exact component={CreatePokemon}></Route>
           <Route path="/view" exact component={ViewPokemon}></Route>
-        </Switch>
+        </Routes>
+      </div>
+    </Router>
+  );
+}*/
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<CreatePokemon />} />
+            <Route path="/create" element={<CreatePokemon />} />
+            <Route path="/view" element={<ViewPokemon />} />
+          </Route>
+        </Routes>
       </div>
     </Router>
   );

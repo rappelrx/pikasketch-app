@@ -16,3 +16,8 @@ const server = express();
 ### Using Axios
 - In /client folder, run `npm install react-router-dom axios`
 - In /client/API.js, make sure to include: `import axios from 'axios';`
+
+### Database Management
+- [MongoDB](https://cloud.mongodb.com)
+- Mongoose: In /server folder, run `npm install mongoose`
+- In /server/index.js, make sure to include: `const mongoose = require('mongoose');`

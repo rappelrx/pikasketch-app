@@ -11,7 +11,7 @@
 import axios from 'axios';
 
 // Specify server location
-const server = 'http://localhost:5000'
+const server = 'http://localhost:5000';
 
 // Define API object
 const API = {
@@ -23,7 +23,7 @@ const API = {
     createPokemon: function (pokemon) {
         return axios.post(`${server}/api/pokemon`, pokemon);
     }
-}
+};
 
 export default API;
 /**
