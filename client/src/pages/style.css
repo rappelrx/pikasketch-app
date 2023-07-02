@@ -1,8 +1,8 @@
-/* style.css for CreatePokemon.jsx */
+/* style.css for CreatePokemon.jsx and ViewPokemon.jsx */
 
 .create-page {
     /*
-    - Make it a flex container where lines are spaced evenly and aligned to the center
+    - Make it a flex container where items are spaced evenly and aligned to the center
     */
     display: flex;
     justify-content: space-evenly;
@@ -15,14 +15,22 @@
     - Add 20px of padding inside the form
     - Make the form only 35% wide
     */
+    border: 1px solid black;
     padding: 20px;
     width: 35%;
 }
 
 .form-row {
+    /*
+    - Add a 16px bottom margin
+    */
     margin-bottom: 16px;
 }
 
 label {
     margin: 5px;
+}
+
+.drawing {
+    border: 1px solid black;
 }
