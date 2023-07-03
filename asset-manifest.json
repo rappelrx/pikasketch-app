@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pikasketch-app/static/css/main.8e9c950b.css",
+    "main.js": "/pikasketch-app/static/js/main.3a9dc658.js",
+    "static/js/787.f4e4fd9b.chunk.js": "/pikasketch-app/static/js/787.f4e4fd9b.chunk.js",
+    "index.html": "/pikasketch-app/index.html",
+    "main.8e9c950b.css.map": "/pikasketch-app/static/css/main.8e9c950b.css.map",
+    "main.3a9dc658.js.map": "/pikasketch-app/static/js/main.3a9dc658.js.map",
+    "787.f4e4fd9b.chunk.js.map": "/pikasketch-app/static/js/787.f4e4fd9b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e9c950b.css",
+    "static/js/main.3a9dc658.js"
+  ]
+}
