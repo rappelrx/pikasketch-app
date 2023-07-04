@@ -1,1 +1,2 @@
-# turbo-dollop
+# Pikasketch App
+Full-stack MERN application
