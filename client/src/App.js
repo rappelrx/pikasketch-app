@@ -25,8 +25,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<CreatePokemon />} />
+          <Route path="/" element={<CreatePokemon />} />
+          <Route element={<Layout />}>
             <Route path="/create" element={<CreatePokemon />} />
             <Route path="/view" element={<ViewPokemon />} />
           </Route>

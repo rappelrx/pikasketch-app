@@ -16,7 +16,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use('/api', router); // registers our router to our server
 
 /* allow us to connect to our MongoDB database */
-mongoose.connect(config.databaseUrl, {
+mongoose.connect(config.database_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true }).then(() => {
         console.log('Connected to MongoDB database');

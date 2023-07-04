@@ -1,19 +1,20 @@
 import React from 'react';
+import './style.css';
 
 /**
  * This is a functional component for selecting a type.
  * Prop(s): id of the select element
  */
-const Type = (props) => {
-    // Any form options/input with these IDs is made to be optional.
-    const defaultEmptyIDs = ['type2', 'move2type', 'move3type', 'move4type'];
+const Type = ({ id }) => {
+    const defaultEmpty = ['type2', 'move2type', 'move3type', 'move4type'];
+
     let emptyOption;
-    if (defaultEmptyIDs.includes(props.id)) {
-        emptyOption = <option defaultValue=""></option>;
+    if (defaultEmpty.includes(id)) {
+        emptyOption = <option value=""></option>;
     }
 
     return (
-        <select id={props.id} name={props.id}>
+        <select id={id} name={id}>
             {emptyOption}
             <option>Normal</option>
             <option>Fire</option>

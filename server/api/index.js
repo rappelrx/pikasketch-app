@@ -1,5 +1,5 @@
 const express = require('express');
-const Pokemon = require('../models/pokemon'); // Pokemon Schema
+const PokemonService = require('../services/pokemon'); // import Pokemon Schema
 
 const router = express.Router(); // define a router
 
@@ -11,7 +11,7 @@ const router = express.Router(); // define a router
  * - router.delete(PATH, HANDLER)
  */
 
-// GET method route
+// GET method route for finding all pokemon
 router.get('/pokemon', async (req, res) => {
     // define our own pokemon in a JSON array
     /* const pokemon = [
@@ -33,28 +33,29 @@ router.get('/pokemon', async (req, res) => {
         }
     ] */
     // Since we defined Pokemon Schema, we can simplify the above code into one line:
-    const pokemon = await Pokemon.find().exec();
+    const pokemon = await PokemonService.findAll();
 
     res.status(200).json({ pokemon }); // 'pokemon' is both key and value
 });
 
+// GET method route for finding pokemon by id
+router.get('/pokemon/:id', async (req, res) => {
+    const pokemon = await PokemonService.findById(req.params.id);
+    res.status(200).json({ pokemon });
+});
 
-// POST method route
+// GET method route for generating random name for pokemon
+router.get('/pokemonName', async (req, res) => {
+    const pokemonName = await PokemonService.generateName();
+    res.status(200).json({ pokemonName });
+});
+
+// POST method route for creating pokemon
 router.post('/pokemon', async (req, res) => {
-    const { pokemon } = req.body;
-    console.log("req.body: " + JSON.stringify(req.body));
-    console.log("pokemon: " + pokemon);
-    const { name, description, type1, image, moves } = pokemon;
-    if ((!name || !description || !type1 || !image || !moves) || moves.length > 4) {
-        res.status(400).json({ error: 'Invalid input' });
-    } else {
-        /* const punchMoves = moves.filter((move) => move.name.includes('Punch'));
-        res.status(200).json({ punchMoves }); */
-        // Since we defined Pokemon Schema, we can simplify the above code into one line:
-        const newPokemon = await Pokemon.create(pokemon);
-
-        res.status(200).json({ pokemon: newPokemon });
-    }
+    const { name, description, type1, type2, image, moves } = req.body;
+    const newPokemon = { name, description, image, type1, type2, moves };
+    const pokemon = await PokemonService.createPokemon(newPokemon);
+    res.status(200).json({ pokemon });
 });
 
 module.exports = router; // to be imported in /server/index.js

@@ -11,18 +11,47 @@
 import axios from 'axios';
 
 // Specify server location
-const server = 'http://localhost:5000';
+const serverURL = 'http://127.0.0.1:5000';
 
 // Define API object
 const API = {
-    // Send GET request 
-    getPokemon: function () {
-        return axios.get(`${server}/api/pokemon`); // use data route defined in our backend!
+    // Send GET request for finding pokemon name
+    getPokemonName: function () {
+        return axios.get(`${serverURL}/api/pokemonName`);
     },
+
+    // Send GET request for finding pokemon
+    getPokemon: function () {
+        return axios.get(`${serverURL}/api/pokemon`); // use data route defined in our backend (i.e., /server/api/index.js)
+    },
+
+    // Send GET request for finding pokemon by id
+    getPokemonByID: function(id) {
+        return axios.get(`${serverURL}/api/pokemon/${id}`);
+    },
+
     // Send POST request
-    createPokemon: function (pokemon) {
-        return axios.post(`${server}/api/pokemon`, pokemon);
-    }
+    /* createPokemon: function (pokemon) {
+        return axios.post(`${serverURL}/api/pokemon`, pokemon);
+    } */
+    createPokemon: function (payload) {
+        const moves = payload.moves.filter(move => {
+            return move.name && move.type && move.power;
+        });
+        const config = {
+            method: 'post',
+            url: `${serverURL}/api/pokemon`,
+            data: {
+                name: payload.name,
+                description: payload.desc,
+                image: payload.image,
+                type1: payload.type1,
+                type2: payload.type2,
+                moves,
+            }
+        };
+        return axios(config);
+    },
 };
 
 export default API;
