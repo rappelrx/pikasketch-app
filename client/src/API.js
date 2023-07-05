@@ -11,7 +11,7 @@
 import axios from 'axios';
 
 // Specify server location
-const serverURL = 'http://127.0.0.1:5000';
+const serverURL = 'https://pikasketch-app-826df761be74.herokuapp.com/';
 
 // Define API object
 const API = {

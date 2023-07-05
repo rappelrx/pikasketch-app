@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import './style.css';
 
 /**
@@ -11,9 +12,10 @@ const Navbar = () => {
                 <h1>PikaSketch</h1>
             </div>
             <div className="nav-buttons">
-                <a href="/create">Create New Pokemon</a>
-                <a href="/view">View All Pokemon</a>
+                <Link to="/create">Create New Pokemon</Link>
+                <Link to="/view">View All Pokemon</Link>
             </div>
+            <Outlet />
         </div>
     );
 };

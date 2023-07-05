@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import CreatePokemon from './pages/CreatePokemon';
 import ViewPokemon from './pages/ViewPokemon';
-import Layout from './pages/Layout';
+// import Layout from './pages/Layout';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 /* (Outdated) Useful Resource: https://v5.reactrouter.com/web/api/ */
 
@@ -25,11 +25,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<CreatePokemon />} />
-          <Route element={<Layout />}>
-            <Route path="/create" element={<CreatePokemon />} />
-            <Route path="/view" element={<ViewPokemon />} />
-          </Route>
+          <Route path="/" element={<Navigate to="/create" />} />
+          <Route path="/create" element={<CreatePokemon />} />
+          <Route path="/view" element={<ViewPokemon />} />
         </Routes>
       </div>
     </Router>
