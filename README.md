@@ -7,6 +7,6 @@ Full-stack application using MERN:
 
 Backend is deployed at https://pikasketch-pokemonart-app-6dd3bbc245d4.herokuapp.com/.
 
-# How to run
+## How to run
 1. In server directory: run `npm run dev`
 2. In client directory: run `npm start`
