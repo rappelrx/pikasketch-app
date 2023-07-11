@@ -5,7 +5,8 @@ Full-stack application using MERN:
 - React for front-end, component-based UI
 - Node and npm for runtime system and package management
 
-Backend is deployed at https://pikasketch-pokemonart-app-6dd3bbc245d4.herokuapp.com/.
+Back-end is deployed at https://pikasketch-pokemonart-app-6dd3bbc245d4.herokuapp.com/.
+[Preview of React front-end](https://rappelrx.github.io/pikasketch-app/)
 
 ## How to run
 1. In server directory: run `npm run dev`
