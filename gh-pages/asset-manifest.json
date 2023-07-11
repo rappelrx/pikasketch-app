@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pikasketch-app/gh-pages/static/css/main.849ba9f5.css",
+    "main.js": "/pikasketch-app/gh-pages/static/js/main.ff966374.js",
+    "static/js/787.dabb6a0a.chunk.js": "/pikasketch-app/gh-pages/static/js/787.dabb6a0a.chunk.js",
+    "index.html": "/pikasketch-app/gh-pages/index.html",
+    "main.849ba9f5.css.map": "/pikasketch-app/gh-pages/static/css/main.849ba9f5.css.map",
+    "main.ff966374.js.map": "/pikasketch-app/gh-pages/static/js/main.ff966374.js.map",
+    "787.dabb6a0a.chunk.js.map": "/pikasketch-app/gh-pages/static/js/787.dabb6a0a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.849ba9f5.css",
+    "static/js/main.ff966374.js"
+  ]
+}
