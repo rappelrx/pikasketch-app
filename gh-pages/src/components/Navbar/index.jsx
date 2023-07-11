@@ -12,8 +12,8 @@ const Navbar = () => {
                 <h1>PikaSketch</h1>
             </div>
             <div className="nav-buttons">
-                <Link to="/create">Create New Pokemon</Link>
-                <Link to="/view">View All Pokemon</Link>
+                <Link to="/pikasketch-app/create">Create New Pokemon</Link>
+                <Link to="/pikasketch-app/view">View All Pokemon</Link>
             </div>
         </div>
     );

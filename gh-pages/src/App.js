@@ -9,9 +9,9 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Redirect from="/" to="/create" exact></Redirect>
-          <Route path="/create" exact component={CreatePokemon}></Route>
-          <Route path="/view" exact component={ViewPokemon}></Route>
+          <Route path="/pikasketch-app/" exact component={CreatePokemon} />
+          <Route path="/pikasketch-app/create" exact component={CreatePokemon} />
+          <Route path="/pikasketch-app/view" exact component={ViewPokemon} />
         </Switch>
       </div>
     </Router>
